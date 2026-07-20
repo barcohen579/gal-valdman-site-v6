@@ -313,3 +313,200 @@ button, input, textarea { font: inherit; }
   .ba-content h3 { font-size: 1.3rem; }
   .ba-button { width: 100%; min-width: 0; }
 }
+/* Mobile compact layout */
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section-pad {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .section-pad.compact {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .hero {
+    padding-top: 36px;
+    padding-bottom: 48px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .ba-card {
+    gap: 28px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.25rem, 10vw, 3.4rem);
+    line-height: 1.02;
+    margin-bottom: 16px;
+  }
+
+  .hero-copy .lead {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2,
+  .statement-box h2,
+  .about-copy h2,
+  .cta-box h2 {
+    font-size: clamp(1.75rem, 7.5vw, 2.45rem);
+    line-height: 1.15;
+  }
+
+  .section-heading p,
+  .statement-box p,
+  .about-copy p,
+  .cta-box p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+  }
+
+  .cards {
+    gap: 14px;
+  }
+
+  .card,
+  .price-card {
+    padding: 22px 18px;
+  }
+
+  .card h3,
+  .price-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .card p,
+  .price-card p,
+  .price-card li {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .pricing-grid {
+    gap: 18px;
+  }
+
+  .studio-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .studio-gallery img {
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+  }
+
+  .ba-card {
+    padding: 18px;
+  }
+
+  .ba-image-wrap {
+    max-width: 330px;
+    margin-inline: auto;
+  }
+
+  .ba-content {
+    text-align: center;
+  }
+
+  .ba-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .ba-content ul {
+    margin: 16px auto 20px;
+    max-width: 260px;
+  }
+
+  .hero-actions,
+  .trust-row {
+    gap: 12px;
+  }
+
+  .button {
+    min-height: 46px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .floating-note {
+    padding: 12px 14px;
+  }
+
+  .about-media img,
+  .hero-image-wrap img {
+    border-radius: 20px;
+  }
+
+  .plan-consultation {
+    padding: 22px 18px;
+    gap: 16px;
+  }
+
+  .plan-consultation img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cta-box {
+    padding: 34px 20px;
+  }
+
+  .site-footer {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-pad {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .section-pad.compact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.35rem;
+  }
+
+  .section-heading h2,
+  .statement-box h2,
+  .about-copy h2,
+  .cta-box h2 {
+    font-size: 1.85rem;
+  }
+
+  .studio-gallery {
+    gap: 8px;
+  }
+
+  .card,
+  .price-card {
+    padding: 20px 16px;
+  }
+
+  .trust-row {
+    font-size: 0.82rem;
+  }
+}
