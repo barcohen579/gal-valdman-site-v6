@@ -338,20 +338,87 @@ html.accessibility-readable-font select {
   font-family: Arial, sans-serif !important;
 }
 
-/* גווני אפור – פתרון יציב גם באנדרואיד */
-html.accessibility-grayscale::after {
-  content: "";
-  position: fixed;
-  inset: 0;
+/* =========================================
+   גווני אפור – פתרון יציב לאנדרואיד
+   ללא filter על כל העמוד
+========================================= */
 
-  background: rgba(255, 255, 255, 0.01);
-
-  -webkit-backdrop-filter: grayscale(1);
-  backdrop-filter: grayscale(1);
-
-  pointer-events: none;
-  z-index: 4000;
+html.accessibility-grayscale {
+  --bg: #f4f4f4;
+  --surface: #ffffff;
+  --surface-soft: #eeeeee;
+  --ink: #222222;
+  --muted: #686868;
+  --pink: #555555;
+  --pink-dark: #333333;
+  --pink-soft: #dddddd;
+  --line: #cccccc;
+  --shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
 }
+
+html.accessibility-grayscale body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+
+/* רקע הכותרת */
+html.accessibility-grayscale .site-header {
+  background: rgba(245, 245, 245, 0.94);
+  border-color: #cccccc;
+}
+
+/* אזורים עם רקע ורוד או גרדיאנט */
+html.accessibility-grayscale .hero,
+html.accessibility-grayscale .method,
+html.accessibility-grayscale .services,
+html.accessibility-grayscale .beforeafter,
+html.accessibility-grayscale .card-accent,
+html.accessibility-grayscale .price-card.featured,
+html.accessibility-grayscale .statement-box,
+html.accessibility-grayscale .accessibility-content {
+  background: #f4f4f4;
+  background-image: none;
+}
+
+/* כרטיסים */
+html.accessibility-grayscale .card,
+html.accessibility-grayscale .price-card,
+html.accessibility-grayscale .ba-card,
+html.accessibility-grayscale .floating-note,
+html.accessibility-grayscale .trust-row span,
+html.accessibility-grayscale .price-option {
+  background: #ffffff;
+  border-color: #cccccc;
+}
+
+/* כפתורי האתר */
+html.accessibility-grayscale .button {
+  background: #555555;
+  background-image: none;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* אזור כהה */
+html.accessibility-grayscale .cta-box {
+  background: #222222;
+  background-image: none;
+  color: #ffffff;
+}
+
+/* תפריט הנגישות נשאר רגיל ופעיל */
+html.accessibility-grayscale .accessibility-panel {
+  background: #ffffff;
+  color: #2b1d22;
+}
+
+html.accessibility-grayscale .accessibility-toggle,
+html.accessibility-grayscale .accessibility-statement-link {
+  background: var(--pink);
+  color: #ffffff;
+}
+
 
 /* תפריט הנגישות נשאר מעל שכבת גווני האפור */
 .accessibility-widget {
@@ -412,10 +479,6 @@ html.accessibility-high-contrast body a {
   text-decoration: underline !important;
 }
 
-html.accessibility-high-contrast .accessibility-widget,
-html.accessibility-high-contrast .accessibility-widget * {
-  filter: none !important;
-}
 
 html.accessibility-high-contrast .accessibility-panel {
   background: #fff !important;
