@@ -338,8 +338,12 @@ html.accessibility-readable-font select {
   font-family: Arial, sans-serif !important;
 }
 
-html.accessibility-grayscale body {
+html.accessibility-grayscale body > *:not(.accessibility-widget) {
   filter: grayscale(1);
+}
+html.accessibility-grayscale .accessibility-widget,
+html.accessibility-grayscale .accessibility-widget * {
+  filter: none !important;
 }
 
 html.accessibility-highlight-links body a:not(.button):not(.accessibility-statement-link) {
@@ -474,39 +478,99 @@ html.accessibility-high-contrast .accessibility-toggle {
 
 @media (max-width: 680px) {
   .accessibility-content {
-    padding: 26px 20px;
-    border-radius: 22px;
+    padding: 24px 18px;
+    border-radius: 20px;
   }
 
   .accessibility-toggle {
     right: 14px;
     bottom: 14px;
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
   }
 
- .accessibility-panel {
-    right: 14px;
-    bottom: 80px;
+  .accessibility-toggle svg {
+    width: 30px;
+    height: 30px;
+  }
 
-    width: min(320px, calc(100vw - 28px));
+  .accessibility-panel {
+    right: 12px;
+    bottom: 76px;
 
-    max-height: 75vh;
+    width: 290px;
+    max-width: calc(100vw - 24px);
 
-    padding: 12px;
+    max-height: calc(100dvh - 105px);
+    overflow-y: auto;
 
+    padding: 10px;
     border-radius: 18px;
-}
+  }
+
+  .accessibility-panel-header {
+    position: sticky;
+    top: -10px;
+    z-index: 20;
+
+    margin: -10px -10px 8px;
+    padding: 10px 12px;
+
+    background: #ffffff;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .accessibility-panel-header h2 {
+    font-size: 1rem;
+  }
+
+  .accessibility-close {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    font-size: 1.4rem;
+  }
+
+  .accessibility-options {
+    gap: 7px;
+    margin-top: 8px;
+  }
 
   .accessibility-option {
-    min-height: 78px;
-    font-size: .82rem;
-    gap: 6px;
-}
+    min-height: 68px;
+    padding: 7px 5px;
+    gap: 3px;
 
-.accessibility-panel-header h2 {
-    font-size: 1rem;
-}
+    border-radius: 13px;
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .accessibility-option-icon {
+    min-height: 24px;
+    font-size: 1.1rem;
+  }
+
+  .accessibility-contrast-icon,
+  .accessibility-grayscale-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .accessibility-text-status {
+    margin-top: 8px;
+    padding: 7px 10px;
+    font-size: 0.83rem;
+  }
+
+  .accessibility-reset,
+  .accessibility-statement-link {
+    min-height: 40px;
+    margin-top: 7px;
+    padding: 7px 12px;
+    border-radius: 12px;
+    font-size: 0.84rem;
+  }
 }
 
 @media (max-width: 380px) {
