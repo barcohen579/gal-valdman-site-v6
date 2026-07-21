@@ -338,12 +338,25 @@ html.accessibility-readable-font select {
   font-family: Arial, sans-serif !important;
 }
 
-html.accessibility-grayscale body > *:not(.accessibility-widget) {
-  filter: grayscale(1);
+/* גווני אפור – פתרון יציב גם באנדרואיד */
+html.accessibility-grayscale::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.01);
+
+  -webkit-backdrop-filter: grayscale(1);
+  backdrop-filter: grayscale(1);
+
+  pointer-events: none;
+  z-index: 4000;
 }
-html.accessibility-grayscale .accessibility-widget,
-html.accessibility-grayscale .accessibility-widget * {
-  filter: none !important;
+
+/* תפריט הנגישות נשאר מעל שכבת גווני האפור */
+.accessibility-widget {
+  position: relative;
+  z-index: 5000;
 }
 
 html.accessibility-highlight-links body a:not(.button):not(.accessibility-statement-link) {
